@@ -24,4 +24,12 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.fade-enter-active, .fade-leave-active {
+ transform: rotate(30deg);
+ transition: all 3s ease;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+transform: rotate(0);
+ transition: all 3s ease;
+}
 </style>
