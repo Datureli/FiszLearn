@@ -1,16 +1,21 @@
 <template>
 <div>
+    <transition name="slide" mode="out-in">
   <question-card />
+    </transition>
+    <random-card />
 </div>
 </template>
 
 <script>
 import QuestionCard from './components/QuestionCard.vue'
+import RandomCard from './components/RandomCard.vue'
 
 export default {
   name: 'App',
   components: {
-    QuestionCard
+    RandomCard,
+    QuestionCard,
   }
 }
 </script>
@@ -24,12 +29,22 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.fade-enter-active, .fade-leave-active {
- transform: rotate(30deg);
- transition: all 3s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-transform: rotate(0);
- transition: all 3s ease;
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 1.5s, transform 2.5s;
+}
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(-30%);
+}
+
 </style>
