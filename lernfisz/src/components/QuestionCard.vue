@@ -1,9 +1,9 @@
 <template>
   <div>
     <ul>
-      <li v-for="question in questions" :key="question.change" class="card">
+      <li  ref="card"  v-for="(question,index) in questions" :key="index" class="card">
         <transition name="flip" mode="out-in">
-          <p :key="question.change" >
+          <p :key="question.change" class="card__">
             {{ question.change ? question.answer : question.question }}
           </p>
         </transition>
@@ -12,6 +12,7 @@
         </button>
       </li>
     </ul>
+    <button @click="randomizeQuestionCard()">randomize</button>
   </div>
 </template>
 
@@ -48,7 +49,26 @@ export default {
     toggleQuestion(question) {
       question.change = !question.change;
     },
+  randomize(question) {
+      for (let i = question.length - 1; i > 0; i--) {
+        let randomIndex = Math.floor(Math.random() * i);
+        let temp = question[i];
+        this.$set(question, i, question[randomIndex]);
+        this.$set(question, randomIndex, temp);
+      }
+    },
+      randomizeQuestionCard() {
+     this.questions.reverse()
+     console.log(this.questions)
+    },
+  
   },
+ // created() {     this.randomize(); },
+  computed: {
+
+
+  },
+
 };
 </script>
 
