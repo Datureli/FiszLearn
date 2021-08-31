@@ -1,8 +1,11 @@
 <template>
 <div>
+  <div class="displayFlex">
     <transition name="slide" mode="out-in">
   <question-card />
     </transition>
+  </div>
+
     <random-card />
 </div>
 </template>
@@ -46,5 +49,9 @@ export default {
   opacity: 0;
   transform: translateX(-30%);
 }
+@media only screen and (min-width: 1200px)  {
+.displayFlex {
 
+}
+}
 </style>

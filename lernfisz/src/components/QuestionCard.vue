@@ -1,17 +1,25 @@
 <template>
   <div>
-    <ul>
-      <li  ref="card"  v-for="(question,index) in questions" :key="index" class="card">
-        <transition name="flip" mode="out-in">
-          <p :key="question.change" class="card__">
-            {{ question.change ? question.answer : question.question }}
-          </p>
-        </transition>
-        <button @click="toggleQuestion(question)">
-          {{ question.change ? "Back" : "Show answer" }}
-        </button>
-      </li>
-    </ul>
+    <div class="displayCards">
+      <ul>
+        <li
+          ref="card"
+          v-for="(question, index) in questions.slice(0,8)"
+          :key="index"
+          class="card"
+        >
+        {{question.filterQuestions}}
+          <transition name="flip" mode="out-in">
+            <p :key="question.change" class="card__">
+              {{ question.change ? question.answer : question.question }}
+            </p>
+          </transition>
+          <button @click="toggleQuestion(question)">
+            {{ question.change ? "Back" : "Show answer" }}
+          </button>
+        </li>
+      </ul>
+    </div>
     <button @click="randomizeQuestionCard()">randomize</button>
   </div>
 </template>
@@ -34,12 +42,50 @@ export default {
         },
         {
           question: "Czym się różni '==' od '==='?",
-          answer: "'==' porównuje wartości zmiennych,'===' sprawdza też czy zmienne mają ten sam typ.",
+          answer:
+            "'==' porównuje wartości zmiennych,'===' sprawdza też czy zmienne mają ten sam typ.",
           change: false,
         },
         {
-           question: "Czym jest :before i :after?",
-          answer: ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+          question: "Czym jest :before i :after?",
+          answer:
+            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+          change: false,
+        },
+        {
+          question: "Czym jest :before i :after?",
+          answer:
+            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+          change: false,
+        },
+        {
+          question: "Czym jest :before i :after?",
+          answer:
+            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+          change: false,
+        },
+        {
+          question: "Czym jest :before i :after?",
+          answer:
+            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+          change: false,
+        },
+        {
+          question: "Czym jest :before i :after?",
+          answer:
+            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+          change: false,
+        },
+        {
+          question: "Czym jest :before i :after?",
+          answer:
+            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+          change: false,
+        },
+        {
+          question: "Czym jest :before i :after?",
+          answer:
+            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
           change: false,
         },
       ],
@@ -49,7 +95,7 @@ export default {
     toggleQuestion(question) {
       question.change = !question.change;
     },
-  randomize(question) {
+    randomize(question) {
       for (let i = question.length - 1; i > 0; i--) {
         let randomIndex = Math.floor(Math.random() * i);
         let temp = question[i];
@@ -57,18 +103,11 @@ export default {
         this.$set(question, randomIndex, temp);
       }
     },
-      randomizeQuestionCard() {
-     this.questions.reverse()
-     console.log(this.questions)
+    randomizeQuestionCard() {
+      this.questions.reverse();
+      console.log(this.questions);
     },
-  
   },
- // created() {     this.randomize(); },
-  computed: {
-
-
-  },
-
 };
 </script>
 
@@ -90,7 +129,6 @@ export default {
   -webkit-box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, 0.5);
   -moz-box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, 0.5);
   box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, 0.5);
-  will-change: transform;
   margin: 30px auto;
   text-decoration: none;
   background-color: green;
@@ -128,5 +166,21 @@ button:hover {
 .flip-leave-from {
   transform: rotateY(180deg);
   opacity: 0;
+}
+@media only screen and (min-width: 1200px)  {
+.displayCards {
+display: flex;
+}
+.card {
+  display: block;
+  max-width: 150px;
+  height: 175px;
+  padding: 80px 50px;
+  justify-content: space-between;
+  line-height: 27px;
+  cursor: pointer;
+  position: relative;
+  margin: 30px auto;
+}
 }
 </style>
