@@ -4,11 +4,11 @@
       <ul>
         <li
           ref="card"
-          v-for="(question, index) in questions.slice(0,8)"
+          v-for="(question, index) in questions.slice(0, 6)"
           :key="index"
           class="card"
         >
-        {{question.filterQuestions}}
+          {{ question.filterQuestions }}
           <transition name="flip" mode="out-in">
             <p :key="question.change" class="card__">
               {{ question.change ? question.answer : question.question }}
@@ -114,7 +114,7 @@ export default {
 <style scoped>
 .card {
   display: block;
-  max-width: 150px;
+  width: 150px;
   height: 175px;
   padding: 80px 50px;
   border-radius: 7px;
@@ -167,20 +167,20 @@ button:hover {
   transform: rotateY(180deg);
   opacity: 0;
 }
-@media only screen and (min-width: 1200px)  {
-.displayCards {
-display: flex;
-}
-.card {
-  display: block;
-  max-width: 150px;
-  height: 175px;
-  padding: 80px 50px;
-  justify-content: space-between;
-  line-height: 27px;
-  cursor: pointer;
-  position: relative;
-  margin: 30px auto;
-}
+@media only screen and (min-width: 1000px) {
+  .displayCards {
+    width: 70%;
+    margin: auto;
+  }
+  ul {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .card {
+    display: block;
+    margin: 20px;
+  }
 }
 </style>

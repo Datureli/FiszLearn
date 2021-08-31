@@ -1,10 +1,10 @@
 <template>
 <div>
-  <div class="displayFlex">
+
     <transition name="slide" mode="out-in">
   <question-card />
     </transition>
-  </div>
+
 
     <random-card />
 </div>
