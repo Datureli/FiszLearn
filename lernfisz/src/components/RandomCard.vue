@@ -1,8 +1,6 @@
 <template>
   <div>
-      <button>
-          random
-      </button>
+   
   </div>
 </template>
 

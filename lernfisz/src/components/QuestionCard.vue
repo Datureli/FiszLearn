@@ -104,8 +104,9 @@ export default {
       }
     },
     randomizeQuestionCard() {
-      this.questions.reverse();
-      console.log(this.questions);
+      this.questions.sort(function(){
+  return (Math.round(Math.random()) - 0.5);
+});
     },
   },
 };
@@ -127,6 +128,8 @@ export default {
   margin: 30px auto;
   text-decoration: none;
   background-color: green;
+  -webkit-box-shadow: inset 21px -50px 32px -24px #3F3D42; 
+box-shadow: inset 21px -50px 32px -24px #3F3D42;
 }
 .cardRotate {
   transform: rotate(180deg);
