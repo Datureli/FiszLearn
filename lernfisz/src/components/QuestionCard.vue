@@ -43,7 +43,7 @@ export default {
         {
           question: "Czym się różni '==' od '==='?",
           answer:
-            "'==' porównuje wartości zmiennych,'===' sprawdza też czy zmienne mają ten sam typ.",
+            "'==' porównuje wartości zmiennych,'===' zmienne i typ.",
           change: false,
         },
         {
@@ -115,20 +115,15 @@ export default {
 .card {
   display: block;
   width: 150px;
-  height: 175px;
+  height: 190px;
   padding: 80px 50px;
-  border-radius: 7px;
-  text-align: center;
-  justify-content: center;
-  line-height: 27px;
+  border-radius: 9px;
+  line-height: 25px;
   cursor: pointer;
   position: relative;
   color: #fff;
   font-weight: 600;
   font-size: 20px;
-  -webkit-box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, 0.5);
-  -moz-box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, 0.5);
-  box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, 0.5);
   margin: 30px auto;
   text-decoration: none;
   background-color: green;
@@ -140,22 +135,28 @@ export default {
 p {
   inline-size: 150px;
   overflow-wrap: break-word;
+   left:0; 
+  top:0; 
+  z-index:1;
+  height:70%; 
+  width:100%;
 }
 button {
   border-radius: 5px;
   border: 1px solid #87cb84;
   background-color: #87cb84;
-  padding: 8px 15px;
+  padding: 10px 16px;
   outline: none;
   font-size: 14px;
   font-weight: 700;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
+
 }
 
 button:hover {
-  background-color: #70a66f;
+  background-color: #26a824;
 }
 
 .flip-enter-active {
