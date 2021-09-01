@@ -53,39 +53,39 @@ export default {
           change: false,
         },
         {
-          question: "Czym jest :before i :after?",
+          question: "Co to jest Html?",
           answer:
-            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+            "Jest to język znaczników służący do tworzenia stron internetowych",
           change: false,
         },
         {
-          question: "Czym jest :before i :after?",
+          question: "Co to jest W3C?",
           answer:
-            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+            "Organizacja zajmująca się ustalaniem standardu pisania stron www",
           change: false,
         },
         {
-          question: "Czym jest :before i :after?",
+          question: "Czym jest branch?",
           answer:
-            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+            "Jest to oddzielna gałąź, na której znajduje się nasz kod.",
           change: false,
         },
         {
-          question: "Czym jest :before i :after?",
+          question: "Co to jest API?",
           answer:
-            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+            "API to skrót oznaczający interfejs programowania aplikacji",
           change: false,
         },
         {
-          question: "Czym jest :before i :after?",
+          question: "Co to jest npm?",
           answer:
-            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+            "Npm jest menedżerem pakietów dla języka JavaScript.",
           change: false,
         },
         {
-          question: "Czym jest :before i :after?",
+          question: "Co to jest JSON?",
           answer:
-            ":before oraz :after umożliwiają dodanie kontentu przed i za elementem.",
+            "JSON to otwarty format zapisu struktur danych.",
           change: false,
         },
       ],
