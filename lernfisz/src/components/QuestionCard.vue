@@ -137,6 +137,10 @@ export default {
   transform: rotate(180deg);
   animation: 3s rotate ease;
 }
+p {
+  inline-size: 150px;
+  overflow-wrap: break-word;
+}
 button {
   border-radius: 5px;
   border: 1px solid #87cb84;
