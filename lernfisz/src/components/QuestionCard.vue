@@ -1,5 +1,6 @@
 <template>
   <div>
+    <button @click="randomizeQuestionCard()">randomize</button>
     <div class="displayCards">
       <ul>
         <li
@@ -20,7 +21,6 @@
         </li>
       </ul>
     </div>
-    <button @click="randomizeQuestionCard()">randomize</button>
   </div>
 </template>
 
@@ -42,8 +42,7 @@ export default {
         },
         {
           question: "Czym się różni '==' od '==='?",
-          answer:
-            "'==' porównuje wartości zmiennych,'===' zmienne i typ.",
+          answer: "'==' porównuje wartości zmiennych,'===' zmienne i typ.",
           change: false,
         },
         {
@@ -66,26 +65,22 @@ export default {
         },
         {
           question: "Czym jest branch?",
-          answer:
-            "Jest to oddzielna gałąź, na której znajduje się nasz kod.",
+          answer: "Jest to oddzielna gałąź, na której znajduje się nasz kod.",
           change: false,
         },
         {
           question: "Co to jest API?",
-          answer:
-            "API to skrót oznaczający interfejs programowania aplikacji",
+          answer: "API to skrót oznaczający interfejs programowania aplikacji",
           change: false,
         },
         {
           question: "Co to jest npm?",
-          answer:
-            "Npm jest menedżerem pakietów dla języka JavaScript.",
+          answer: "Npm jest menedżerem pakietów dla języka JavaScript.",
           change: false,
         },
         {
           question: "Co to jest JSON?",
-          answer:
-            "JSON to otwarty format zapisu struktur danych.",
+          answer: "JSON to otwarty format zapisu struktur danych.",
           change: false,
         },
       ],
@@ -95,18 +90,11 @@ export default {
     toggleQuestion(question) {
       question.change = !question.change;
     },
-    randomize(question) {
-      for (let i = question.length - 1; i > 0; i--) {
-        let randomIndex = Math.floor(Math.random() * i);
-        let temp = question[i];
-        this.$set(question, i, question[randomIndex]);
-        this.$set(question, randomIndex, temp);
-      }
-    },
+
     randomizeQuestionCard() {
-      this.questions.sort(function(){
-  return (Math.round(Math.random()) - 0.5);
-});
+      this.questions.sort(function() {
+        return Math.round(Math.random()) - 0.5;
+      });
     },
   },
 };
@@ -128,8 +116,8 @@ export default {
   margin: 30px auto;
   text-decoration: none;
   background-color: green;
-  -webkit-box-shadow: inset 21px -50px 32px -24px #3F3D42; 
-box-shadow: inset 21px -50px 32px -24px #3F3D42;
+  -webkit-box-shadow: inset 21px -50px 32px -24px #3f3d42;
+  box-shadow: inset 21px -50px 32px -24px #3f3d42;
 }
 .cardRotate {
   transform: rotate(180deg);
@@ -138,16 +126,16 @@ box-shadow: inset 21px -50px 32px -24px #3F3D42;
 p {
   inline-size: 150px;
   overflow-wrap: break-word;
-   left:0; 
-  top:0; 
-  z-index:1;
-  height:70%; 
-  width:100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  height: 70%;
+  width: 100%;
 }
 button {
   border-radius: 5px;
-  border: 1px solid #87cb84;
-  background-color: #87cb84;
+  border: 1px solid #22bb1a;
+  background-color: #42c73b;
   padding: 10px 16px;
   outline: none;
   font-size: 14px;
@@ -155,15 +143,14 @@ button {
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
-
 }
 
 button:hover {
-  background-color: #26a824;
+  background-color: #2dcc2b;
 }
 
 .flip-enter-active {
-  transition: all 0.4s ease;
+  transition: all 0.7s ease;
 }
 
 .flip-leave-active {

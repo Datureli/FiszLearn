@@ -13,14 +13,12 @@
 
 <script>
 import QuestionCard from "./components/QuestionCard.vue";
-import RandomCard from "./components/RandomCard.vue";
 import Navigation from "./components/Navigation.vue";
 
 export default {
   name: "App",
   components: {
     Navigation,
-    RandomCard,
     QuestionCard,
   },
 };
@@ -37,23 +35,5 @@ export default {
 header {
   width: 100%;
   height: 60px;
-
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-.slide-enter-active,
-.slide-leave-active {
-  transition: opacity 1.5s, transform 2.5s;
-}
-.slide-enter,
-.slide-leave-to {
-  opacity: 0;
-  transform: translateX(-30%);
 }
 </style>
